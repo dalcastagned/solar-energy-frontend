@@ -6,6 +6,7 @@ import {
   RouteComponentProps,
   RouteProps as ReactDOMRouteProps,
 } from 'react-router-dom';
+import { whereRedirect } from 'utils/tests/where-redirect';
 
 import { useAuth } from '../hooks/auth';
 import { checkRoles } from '../utils/check-roles';
@@ -32,7 +33,7 @@ const Route = ({
       return (
         <Redirect
           to={{
-            pathname: '/',
+            pathname: whereRedirect(isPrivate),
             state: { from: params.location },
           }}
         />

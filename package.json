@@ -52,6 +52,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4",
+    "formik": "^2.2.9",
+    "formik-material-ui": "^4.0.0-alpha.2",
+    "formik-material-ui-lab": "^1.0.0-alpha.2",
     "history": "^5.0.1",
     "http-proxy-middleware": "^2.0.1",
     "husky": "^7.0.4",
@@ -68,7 +71,8 @@
     "react-toastify": "^9.0.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.4.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
