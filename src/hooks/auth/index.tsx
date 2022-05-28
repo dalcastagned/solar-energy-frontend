@@ -6,7 +6,11 @@ import {
   useState,
 } from 'react';
 
-import { LoginCredentials, User } from '../../models/user';
+import {
+  LoginCredentials,
+  UpdatePasswordCredentials,
+  User,
+} from '../../models/user';
 import api from '../../services/api';
 
 export type AuthState = {
@@ -17,6 +21,7 @@ export type AuthContextData = {
   user: User;
   signIn(credentials: LoginCredentials): Promise<void>;
   signOut(): void;
+  updatePassword(credentials: UpdatePasswordCredentials): Promise<void>;
 };
 
 export type AuthProviderParams = {
@@ -65,6 +70,20 @@ const AuthProvider = ({ children }: AuthProviderParams): JSX.Element => {
     setData({ user });
   }, []);
 
+  const updatePassword = useCallback(
+    async ({
+      user,
+      currentPassword,
+      newPassword,
+    }: UpdatePasswordCredentials) => {
+      await api.post<User>(`/user/reset-password/${user}`, {
+        currentPassword,
+        newPassword,
+      });
+    },
+    [],
+  );
+
   const signOut = useCallback(() => {
     cleanStorage();
 
@@ -77,6 +96,7 @@ const AuthProvider = ({ children }: AuthProviderParams): JSX.Element => {
         user: data.user,
         signIn,
         signOut,
+        updatePassword,
       }}
     >
       {children}

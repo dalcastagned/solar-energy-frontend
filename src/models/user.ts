@@ -9,6 +9,12 @@ export type User = {
   roles: string[];
 };
 
+export type UpdatePasswordCredentials = {
+  user: string;
+  currentPassword: string;
+  newPassword: string;
+};
+
 export interface InformationWhereToRedirect<T = Record<string, unknown>> {
   url: string;
   data: T;

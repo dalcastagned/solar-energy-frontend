@@ -1,12 +1,15 @@
-import Login from 'pages/Login';
 import { Switch } from 'react-router-dom';
 
+import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
+import ResetPassword from '../pages/ResetPassword';
 import Route from './Route';
 
 const Routes = (): JSX.Element => (
   <Switch>
     <Route Component={Login} path="/" exact />
+
+    <Route Component={ResetPassword} path="/reset-password" exact />
 
     <Route Component={NotFound} isPrivate />
   </Switch>

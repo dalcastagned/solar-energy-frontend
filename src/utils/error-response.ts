@@ -20,7 +20,7 @@ export const handleErrorResponse = (
 
   const { status } = error.response;
 
-  if (location === '/reset-password' && status === 401) {
+  if (location === '/reset-password' && status === 400) {
     return 'Senha atual incorreta.';
   }
 
