@@ -87,6 +87,7 @@ export const TextFieldStyles = {
   input: { fontSize: '1.6rem' },
   '& .MuiOutlinedInput-root': { fontSize: '1.6rem' },
   '& p': { fontSize: '1.2rem' },
+  '& .MuiSvgIcon-root': { fontSize: '2.25rem' },
 };
 
 export const ButtonStyles = {

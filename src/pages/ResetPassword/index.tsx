@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Alert, Button, TextField } from '@mui/material';
+import LockIcon from '@mui/icons-material/Lock';
+import { Alert, Button, InputAdornment, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -92,6 +93,14 @@ const ResetPassword = (): JSX.Element => {
             name="currentPassword"
             label="Senha atual"
             type="password"
+            InputProps={{
+              placeholder: 'Digite sua senha atual',
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon />
+                </InputAdornment>
+              ),
+            }}
             sx={S.TextFieldStyles}
             value={formik.values.currentPassword}
             onChange={formik.handleChange}
@@ -108,6 +117,14 @@ const ResetPassword = (): JSX.Element => {
             name="newPassword"
             label="Nova senha"
             type="password"
+            InputProps={{
+              placeholder: 'Digite sua nova senha',
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon />
+                </InputAdornment>
+              ),
+            }}
             sx={S.TextFieldStyles}
             value={formik.values.newPassword}
             onChange={formik.handleChange}
@@ -121,6 +138,14 @@ const ResetPassword = (): JSX.Element => {
             name="confirmNewPassword"
             label="Confirmar nova senha"
             type="password"
+            InputProps={{
+              placeholder: 'Confirme sua nova senha',
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon />
+                </InputAdornment>
+              ),
+            }}
             sx={S.TextFieldStyles}
             value={formik.values.confirmNewPassword}
             onChange={formik.handleChange}

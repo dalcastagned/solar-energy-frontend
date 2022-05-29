@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import ResetPassword from '../pages/ResetPassword';
+import SignUp from '../pages/SignUp';
 import Route from './Route';
 
 const Routes = (): JSX.Element => (
@@ -10,6 +11,8 @@ const Routes = (): JSX.Element => (
     <Route Component={Login} path="/" exact />
 
     <Route Component={ResetPassword} path="/reset-password" exact />
+
+    <Route Component={SignUp} path="/signup" exact />
 
     <Route Component={NotFound} isPrivate />
   </Switch>

@@ -22,6 +22,7 @@ export type AuthContextData = {
   signIn(credentials: LoginCredentials): Promise<void>;
   signOut(): void;
   updatePassword(credentials: UpdatePasswordCredentials): Promise<void>;
+  signUp(credentials: LoginCredentials): Promise<void>;
 };
 
 export type AuthProviderParams = {
@@ -84,6 +85,13 @@ const AuthProvider = ({ children }: AuthProviderParams): JSX.Element => {
     [],
   );
 
+  const signUp = useCallback(async ({ email, password }: LoginCredentials) => {
+    await api.post<User>('/user/signup', {
+      email,
+      password,
+    });
+  }, []);
+
   const signOut = useCallback(() => {
     cleanStorage();
 
@@ -97,6 +105,7 @@ const AuthProvider = ({ children }: AuthProviderParams): JSX.Element => {
         signIn,
         signOut,
         updatePassword,
+        signUp,
       }}
     >
       {children}

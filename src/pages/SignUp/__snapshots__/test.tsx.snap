@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Login /> should render the main 1`] = `
+exports[`<SignUp /> should render the main 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -133,7 +133,7 @@ exports[`<Login /> should render the main 1`] = `
         src="/img/logo.png"
       />
       <h1>
-        Seja bem vindo
+        Seja bem-vindo
       </h1>
     </div>
     <form
@@ -253,12 +253,69 @@ exports[`<Login /> should render the main 1`] = `
           </fieldset>
         </div>
       </div>
+      <div
+        class="MuiFormControl-root MuiTextField-root css-1iich4g-MuiFormControl-root-MuiTextField-root"
+      >
+        <label
+          class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-1sumxir-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink="true"
+          for="confirmPassword"
+          id="confirmPassword-label"
+        >
+          Confirmar senha
+        </label>
+        <div
+          class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root"
+        >
+          <div
+            class="MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-ittuaa-MuiInputAdornment-root"
+          >
+            <span
+              class="notranslate"
+            >
+              ​
+            </span>
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="LockIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+              />
+            </svg>
+          </div>
+          <input
+            aria-invalid="false"
+            class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedStart css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Confirme sua senha"
+            type="password"
+            value=""
+          />
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-1in441m"
+            >
+              <span>
+                Confirmar senha
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
       <button
         class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-vyxd6w-MuiButtonBase-root-MuiButton-root"
         tabindex="0"
         type="submit"
       >
-        Entrar
+        Cadastrar
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />
@@ -266,9 +323,9 @@ exports[`<Login /> should render the main 1`] = `
     </form>
     <a
       class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ecrjkk-MuiTypography-root-MuiLink-root"
-      href="/signup"
+      href="/"
     >
-      Ainda não possui uma conta? Cadastre-se!
+      Já possui uma conta? Faça o login!
     </a>
   </div>
 </div>

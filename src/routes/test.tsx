@@ -1,11 +1,37 @@
-import { screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Link } from 'react-router-dom';
+import { LoginCredentials } from 'models/user';
+import { Link, MemoryRouter } from 'react-router-dom';
+import Routes from 'routes';
+import api from 'services/api';
 import { renderWithRoute } from 'utils/tests/helpers';
 
-import { AuthProvider } from '../hooks/auth';
-import { userMock } from '../hooks/auth/__mocks__';
+import { AuthProvider, cleanStorage, useAuth } from '../hooks/auth';
+import { loginRequestMock, userMock } from '../hooks/auth/__mocks__';
 import Route from './Route';
+
+const login = async (): Promise<void> => {
+  cleanStorage();
+
+  jest.spyOn(api, 'post').mockImplementation(async () => ({ data: userMock }));
+
+  let signIn: (credentials: LoginCredentials) => Promise<void>;
+
+  const App = (): JSX.Element => {
+    ({ signIn } = useAuth());
+    return <Routes />;
+  };
+
+  renderWithRoute(
+    <AuthProvider>
+      <App />
+    </AuthProvider>,
+  );
+
+  await act(async () => {
+    signIn(loginRequestMock);
+  });
+};
 
 describe('<Route />', () => {
   it('Checking if the component was redirected', () => {
@@ -49,12 +75,10 @@ describe('<Route />', () => {
       </AuthProvider>,
     );
 
-    screen.debug();
     expect(screen.getByTestId('container')).toBeEmptyDOMElement();
 
     userEvent.click(screen.getByTestId('test-page-private-click-here'));
 
-    screen.debug();
     expect(screen.getByText('essa página é privada')).toBeInTheDocument();
   });
 
@@ -87,5 +111,33 @@ describe('<Route />', () => {
     userEvent.click(screen.getByTestId('test-page-private-click-here'));
 
     expect(screen.getByTestId('container')).toBeEmptyDOMElement();
+  });
+
+  it('should remove the user data from local storage when user sign out', async () => {
+    localStorage.setItem('user', JSON.stringify(userMock));
+
+    let signOut: () => void;
+
+    const App = (): JSX.Element => {
+      ({ signOut } = useAuth());
+      return <Routes />;
+    };
+
+    renderWithRoute(
+      <AuthProvider>
+        <App />
+      </AuthProvider>,
+    );
+
+    await act(async () => {
+      signOut();
+    });
+
+    expect(localStorage.getItem('user')).toEqual(null);
+  });
+
+  it('should login and set localstorage when user is valid', async () => {
+    await login();
+    expect(localStorage.getItem('user')).toEqual(JSON.stringify(userMock));
   });
 });

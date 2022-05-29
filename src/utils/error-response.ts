@@ -24,6 +24,10 @@ export const handleErrorResponse = (
     return 'Senha atual incorreta.';
   }
 
+  if (location === '/signup' && status === 400) {
+    return 'Usuário já cadastrado.';
+  }
+
   switch (status) {
     case 401:
       return 'Usuário ou senha inválidos.';
