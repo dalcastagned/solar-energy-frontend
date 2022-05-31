@@ -31,7 +31,12 @@
     "eslint-plugin-import-helpers"
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-one-expression-per-line": "off",
     "react/prop-types": "off",

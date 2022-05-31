@@ -4,6 +4,7 @@ import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import ResetPassword from '../pages/ResetPassword';
 import SignUp from '../pages/SignUp';
+import LayoutRoute from './LayoutRoute';
 import Route from './Route';
 
 const Routes = (): JSX.Element => (
@@ -14,7 +15,7 @@ const Routes = (): JSX.Element => (
 
     <Route Component={SignUp} path="/signup" exact />
 
-    <Route Component={NotFound} isPrivate />
+    <LayoutRoute Component={NotFound} Title="Página não encontrada" isPrivate />
   </Switch>
 );
 

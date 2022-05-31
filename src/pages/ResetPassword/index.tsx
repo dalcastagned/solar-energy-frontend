@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import LockIcon from '@mui/icons-material/Lock';
-import { Alert, Button, InputAdornment, TextField } from '@mui/material';
+import { Fade, InputAdornment } from '@mui/material';
 import { useFormik } from 'formik';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -77,99 +77,99 @@ const ResetPassword = (): JSX.Element => {
   return (
     <S.Wrapper>
       <S.ContainerImage />
-      <S.ContainerLogin>
-        <S.ContainerInfo>
-          <img src="/img/logo.png" alt="Logo" />
-          <h1>Senha expirada. Atualize para continuar!</h1>
-        </S.ContainerInfo>
-        <S.Form onSubmit={formik.handleSubmit}>
-          {errorMessage && (
-            <Alert severity="error" onClose={onCloseAlert} sx={S.AlertStyles}>
-              {errorMessage}
-            </Alert>
-          )}
-          <TextField
-            id="currentPassword"
-            name="currentPassword"
-            label="Senha atual"
-            type="password"
-            InputProps={{
-              placeholder: 'Digite sua senha atual',
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockIcon />
-                </InputAdornment>
-              ),
-            }}
-            sx={S.TextFieldStyles}
-            value={formik.values.currentPassword}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.currentPassword &&
-              Boolean(formik.errors.currentPassword)
-            }
-            helperText={
-              formik.touched.currentPassword && formik.errors.currentPassword
-            }
-          />
-          <TextField
-            id="newPassword"
-            name="newPassword"
-            label="Nova senha"
-            type="password"
-            InputProps={{
-              placeholder: 'Digite sua nova senha',
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockIcon />
-                </InputAdornment>
-              ),
-            }}
-            sx={S.TextFieldStyles}
-            value={formik.values.newPassword}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.newPassword && Boolean(formik.errors.newPassword)
-            }
-            helperText={formik.touched.newPassword && formik.errors.newPassword}
-          />
-          <TextField
-            id="confirmNewPassword"
-            name="confirmNewPassword"
-            label="Confirmar nova senha"
-            type="password"
-            InputProps={{
-              placeholder: 'Confirme sua nova senha',
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockIcon />
-                </InputAdornment>
-              ),
-            }}
-            sx={S.TextFieldStyles}
-            value={formik.values.confirmNewPassword}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.confirmNewPassword &&
-              Boolean(formik.errors.confirmNewPassword)
-            }
-            helperText={
-              formik.touched.confirmNewPassword &&
-              formik.errors.confirmNewPassword
-            }
-          />
-          <Button
-            color="primary"
-            variant="contained"
-            fullWidth
-            type="submit"
-            disabled={loading}
-            sx={S.ButtonStyles}
-          >
-            Alterar senha
-          </Button>
-        </S.Form>
-      </S.ContainerLogin>
+      <Fade in timeout={1000}>
+        <S.ContainerResetPassword>
+          <S.ContainerInfo>
+            <img src="/img/logo.png" alt="Logo" />
+            <h1>Senha expirada. Atualize para continuar!</h1>
+          </S.ContainerInfo>
+          <S.Form onSubmit={formik.handleSubmit}>
+            {errorMessage && (
+              <S.AlertStyled severity="error" onClose={onCloseAlert}>
+                {errorMessage}
+              </S.AlertStyled>
+            )}
+            <S.TextFieldStyled
+              id="currentPassword"
+              name="currentPassword"
+              label="Senha atual"
+              type="password"
+              InputProps={{
+                placeholder: 'Digite sua senha atual',
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LockIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value={formik.values.currentPassword}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.currentPassword &&
+                Boolean(formik.errors.currentPassword)
+              }
+              helperText={
+                formik.touched.currentPassword && formik.errors.currentPassword
+              }
+            />
+            <S.TextFieldStyled
+              id="newPassword"
+              name="newPassword"
+              label="Nova senha"
+              type="password"
+              InputProps={{
+                placeholder: 'Digite sua nova senha',
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LockIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value={formik.values.newPassword}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.newPassword && Boolean(formik.errors.newPassword)
+              }
+              helperText={
+                formik.touched.newPassword && formik.errors.newPassword
+              }
+            />
+            <S.TextFieldStyled
+              id="confirmNewPassword"
+              name="confirmNewPassword"
+              label="Confirmar nova senha"
+              type="password"
+              InputProps={{
+                placeholder: 'Confirme sua nova senha',
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LockIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value={formik.values.confirmNewPassword}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.confirmNewPassword &&
+                Boolean(formik.errors.confirmNewPassword)
+              }
+              helperText={
+                formik.touched.confirmNewPassword &&
+                formik.errors.confirmNewPassword
+              }
+            />
+            <S.ButtonStyled
+              color="primary"
+              variant="contained"
+              fullWidth
+              type="submit"
+              disabled={loading}
+            >
+              Alterar senha
+            </S.ButtonStyled>
+          </S.Form>
+        </S.ContainerResetPassword>
+      </Fade>
     </S.Wrapper>
   );
 };

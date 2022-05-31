@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import { Alert, Button, InputAdornment, Link, TextField } from '@mui/material';
+import { Fade, InputAdornment } from '@mui/material';
 import { useFormik } from 'formik';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -70,93 +70,91 @@ const SignUp = (): JSX.Element => {
   return (
     <S.Wrapper>
       <S.ContainerImage />
-      <S.ContainerLogin>
-        <S.ContainerInfo>
-          <img src="/img/logo.png" alt="Logo" />
-          <h1>Seja bem-vindo</h1>
-        </S.ContainerInfo>
-        <S.Form onSubmit={formik.handleSubmit}>
-          {errorMessage && (
-            <Alert severity="error" onClose={onCloseAlert} sx={S.AlertStyles}>
-              {errorMessage}
-            </Alert>
-          )}
-          <TextField
-            id="email"
-            name="email"
-            label="Email"
-            InputProps={{
-              placeholder: 'exemplo@exemplo.com',
-              startAdornment: (
-                <InputAdornment position="start">
-                  <EmailIcon />
-                </InputAdornment>
-              ),
-            }}
-            sx={S.TextFieldStyles}
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email && formik.errors.email}
-          />
-          <TextField
-            id="password"
-            name="password"
-            label="Senha"
-            type="password"
-            InputProps={{
-              placeholder: 'Digite sua senha',
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockIcon />
-                </InputAdornment>
-              ),
-            }}
-            sx={S.TextFieldStyles}
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            helperText={formik.touched.password && formik.errors.password}
-          />
-          <TextField
-            id="confirmPassword"
-            name="confirmPassword"
-            label="Confirmar senha"
-            type="password"
-            InputProps={{
-              placeholder: 'Confirme sua senha',
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockIcon />
-                </InputAdornment>
-              ),
-            }}
-            sx={S.TextFieldStyles}
-            value={formik.values.confirmPassword}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.confirmPassword &&
-              Boolean(formik.errors.confirmPassword)
-            }
-            helperText={
-              formik.touched.confirmPassword && formik.errors.confirmPassword
-            }
-          />
-          <Button
-            color="primary"
-            variant="contained"
-            fullWidth
-            type="submit"
-            disabled={loading}
-            sx={S.ButtonStyles}
-          >
-            Cadastrar
-          </Button>
-        </S.Form>
-        <Link href="/" sx={S.LinkStyles}>
-          Já possui uma conta? Faça o login!
-        </Link>
-      </S.ContainerLogin>
+      <Fade in timeout={1000}>
+        <S.ContainerSignUp>
+          <S.ContainerInfo>
+            <img src="/img/logo.png" alt="Logo" />
+            <h1>Seja bem-vindo</h1>
+          </S.ContainerInfo>
+          <S.Form onSubmit={formik.handleSubmit}>
+            {errorMessage && (
+              <S.AlertStyled severity="error" onClose={onCloseAlert}>
+                {errorMessage}
+              </S.AlertStyled>
+            )}
+            <S.TextFieldStyled
+              id="email"
+              name="email"
+              label="Email"
+              InputProps={{
+                placeholder: 'exemplo@exemplo.com',
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <EmailIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
+            />
+            <S.TextFieldStyled
+              id="password"
+              name="password"
+              label="Senha"
+              type="password"
+              InputProps={{
+                placeholder: 'Digite sua senha',
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LockIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              helperText={formik.touched.password && formik.errors.password}
+            />
+            <S.TextFieldStyled
+              id="confirmPassword"
+              name="confirmPassword"
+              label="Confirmar senha"
+              type="password"
+              InputProps={{
+                placeholder: 'Confirme sua senha',
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <LockIcon />
+                  </InputAdornment>
+                ),
+              }}
+              value={formik.values.confirmPassword}
+              onChange={formik.handleChange}
+              error={
+                formik.touched.confirmPassword &&
+                Boolean(formik.errors.confirmPassword)
+              }
+              helperText={
+                formik.touched.confirmPassword && formik.errors.confirmPassword
+              }
+            />
+            <S.ButtonStyled
+              color="primary"
+              variant="contained"
+              fullWidth
+              type="submit"
+              disabled={loading}
+            >
+              Cadastrar
+            </S.ButtonStyled>
+          </S.Form>
+          <S.LinkStyled href="/">
+            Já possui uma conta? Faça o login!
+          </S.LinkStyled>
+        </S.ContainerSignUp>
+      </Fade>
     </S.Wrapper>
   );
 };

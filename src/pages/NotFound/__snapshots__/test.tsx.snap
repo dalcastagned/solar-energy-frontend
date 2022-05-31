@@ -1,70 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NotFound /> should render the main 1`] = `
-.c1 {
-  width: 70rem;
-  margin-top: -20rem;
-  margin-left: -13rem;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  margin-top: -13rem;
-  margin-bottom: 1rem;
-}
-
-.c3 {
-  margin-bottom: 2rem;
-}
-
-.c4 {
-  height: 5rem;
-}
-
 <div
-  class="c0"
+  class="css-1clb1mu"
 >
   <img
     alt=""
-    class="c1"
+    class="css-1dwhv5t"
     src="/img/bot.svg"
   />
   <h1
-    class="c2"
+    class="css-jftm75"
   >
     Oops! Página não encontrada
   </h1>
   <p
-    class="c3"
+    class="css-8fkoyy"
   >
     A página que você está tentando acessar não existe ou foi movida.
   </p>
   <p
-    class="c3"
+    class="css-8fkoyy"
   >
     Tente voltar para a nossa página inicial
   </p>
   <a
-    class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root c4 css-sghohy-MuiButtonBase-root-MuiButton-root"
+    class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-126p7k4-MuiButtonBase-root-MuiButton-root"
     href="/"
     tabindex="0"
   >
