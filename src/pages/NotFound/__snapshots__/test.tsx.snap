@@ -2,25 +2,25 @@
 
 exports[`<NotFound /> should render the main 1`] = `
 <div
-  class="css-1clb1mu"
+  class="MuiBox-root css-umlr5"
 >
   <img
     alt=""
-    class="css-1dwhv5t"
+    class="css-ca8jrg"
     src="/img/bot.svg"
   />
   <h1
-    class="css-jftm75"
+    class="css-rfu5bd"
   >
     Oops! Página não encontrada
   </h1>
   <p
-    class="css-8fkoyy"
+    class="css-1yhs01k"
   >
-    A página que você está tentando acessar não existe ou foi movida.
+    A página que você está tentando acessar não existe.
   </p>
   <p
-    class="css-8fkoyy"
+    class="css-1yhs01k"
   >
     Tente voltar para a nossa página inicial
   </p>

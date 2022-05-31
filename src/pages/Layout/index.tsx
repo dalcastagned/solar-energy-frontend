@@ -94,7 +94,7 @@ const Layout = ({ children, Title }: LayoutProps): JSX.Element => {
             <IconButton
               onClick={handleClickAvatar}
               size="small"
-              sx={{ ml: 2 }}
+              sx={{ pl: 2 }}
               aria-controls={anchorEl ? 'account-menu' : undefined}
               aria-haspopup="true"
               aria-expanded={anchorEl ? 'true' : undefined}
