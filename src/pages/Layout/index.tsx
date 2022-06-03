@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { MouseEvent, ReactNode, useState } from 'react';
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Logout from '@mui/icons-material/Logout';
@@ -22,17 +22,17 @@ import { useHistory } from 'react-router-dom';
 import * as S from './styles';
 
 type LayoutProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
   Title?: string;
 };
 
 const Layout = ({ children, Title }: LayoutProps): JSX.Element => {
   const { signOut, user } = useAuth();
   const history = useHistory();
-  const [open, setOpen] = React.useState(false);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleClickAvatar = (event: React.MouseEvent<HTMLElement>): void => {
+  const handleClickAvatar = (event: MouseEvent<HTMLElement>): void => {
     setAnchorEl(event.currentTarget);
   };
   const handleCloseAvatar = (): void => {
@@ -94,7 +94,7 @@ const Layout = ({ children, Title }: LayoutProps): JSX.Element => {
             <IconButton
               onClick={handleClickAvatar}
               size="small"
-              sx={{ pl: 2 }}
+              sx={{ ml: 2 }}
               aria-controls={anchorEl ? 'account-menu' : undefined}
               aria-haspopup="true"
               aria-expanded={anchorEl ? 'true' : undefined}

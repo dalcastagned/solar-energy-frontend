@@ -17,7 +17,7 @@ export const Main = styled('main')<{
     duration: theme.transitions.duration.leavingScreen,
   }),
   marginLeft: `-26rem`,
-  '@media screen and (max-width: 980px)': {
+  '@media screen and (max-width: 680px)': {
     marginLeft: 0,
   },
   ...(open && {
@@ -73,7 +73,7 @@ export const DrawerStyled = styled(Drawer)(() => ({
   '& .MuiSvgIcon-root': { fontSize: '2.25rem' },
   '& .MuiTypography-root': { fontSize: '1.6rem' },
 
-  '@media screen and (max-width: 980px)': {
+  '@media screen and (max-width: 680px)': {
     position: 'absolute',
   },
 }));

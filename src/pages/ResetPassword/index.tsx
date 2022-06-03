@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import LockIcon from '@mui/icons-material/Lock';
-import { Fade, InputAdornment } from '@mui/material';
+import { CircularProgress, Fade, InputAdornment } from '@mui/material';
 import { useFormik } from 'formik';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -163,9 +163,8 @@ const ResetPassword = (): JSX.Element => {
               variant="contained"
               fullWidth
               type="submit"
-              disabled={loading}
             >
-              Alterar senha
+              {loading ? <CircularProgress color="inherit" /> : 'Alterar senha'}
             </S.ButtonStyled>
           </S.Form>
         </S.ContainerResetPassword>

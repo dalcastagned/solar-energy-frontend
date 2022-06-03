@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import { Fade, InputAdornment } from '@mui/material';
+import { CircularProgress, Fade, InputAdornment } from '@mui/material';
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -30,8 +30,8 @@ const Login = (): JSX.Element => {
   const history = useHistory();
 
   const handleLogin = async (credentials: LoginCredentials): Promise<void> => {
+    setLoading(true);
     try {
-      setLoading(true);
       await signIn(credentials);
     } catch (err) {
       const errorMessageToValidate = (
@@ -116,9 +116,8 @@ const Login = (): JSX.Element => {
               variant="contained"
               fullWidth
               type="submit"
-              disabled={loading}
             >
-              Entrar
+              {loading ? <CircularProgress color="inherit" /> : 'Entrar'}
             </S.ButtonStyled>
           </S.Form>
           <S.LinkStyled href="/signup">

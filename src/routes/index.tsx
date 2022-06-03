@@ -1,5 +1,6 @@
 import { Switch } from 'react-router-dom';
 
+import ListPlants from '../pages/ListPlants';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import ResetPassword from '../pages/ResetPassword';
@@ -14,6 +15,14 @@ const Routes = (): JSX.Element => (
     <Route Component={ResetPassword} path="/reset-password" exact />
 
     <Route Component={SignUp} path="/signup" exact />
+
+    <LayoutRoute
+      Component={ListPlants}
+      path="/plants"
+      Title="Lista de Unidades"
+      exact
+      isPrivate
+    />
 
     <LayoutRoute Component={NotFound} Title="Página não encontrada" isPrivate />
   </Switch>

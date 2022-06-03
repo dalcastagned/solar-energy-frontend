@@ -29,6 +29,10 @@ const GlobalStyles = createGlobalStyle`
     html {
       font-size: 62.5%;
     }
+
+  .Toastify__toast-body {
+    font-size: 1.6rem;
+  }
 `;
 
 export default GlobalStyles;

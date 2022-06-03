@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListPlants /> should render the main 1`] = `
+<div>
+  <div
+    class="css-1q6wntd"
+  >
+    <form
+      class="css-6sihv2"
+    >
+      <div
+        class="MuiFormControl-root MuiTextField-root css-14lzurj-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedStart css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root"
+        >
+          <div
+            class="MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-ittuaa-MuiInputAdornment-root"
+          >
+            <span
+              class="notranslate"
+            >
+              ​
+            </span>
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="SearchIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </div>
+          <input
+            aria-invalid="false"
+            class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedStart css-1o9s3wi-MuiInputBase-input-MuiOutlinedInput-input"
+            id="filter"
+            name="filter"
+            placeholder="Apelido, Local, Marca, Modelo"
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-hdw1oc"
+            >
+              <span
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+      <button
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root css-1b2e0bq-MuiButtonBase-root-MuiButton-root"
+        tabindex="0"
+        type="submit"
+      >
+        Pesquisar
+      </button>
+    </form>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 MuiAlert-root MuiAlert-standardError MuiAlert-standard css-1hcet0e-MuiPaper-root-MuiAlert-root"
+      role="alert"
+    >
+      <div
+        class="MuiAlert-icon css-1ytlwq5-MuiAlert-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+          data-testid="ErrorOutlineIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+          />
+        </svg>
+      </div>
+      <div
+        class="MuiAlert-message css-acap47-MuiAlert-message"
+      >
+        Ocorreu um erro no servidor.
+      </div>
+    </div>
+    <button
+      class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root css-19hf11k-MuiButtonBase-root-MuiButton-root"
+      tabindex="0"
+      type="button"
+    >
+      Nova Unidade
+    </button>
+  </div>
+</div>
+`;

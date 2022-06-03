@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
-import { Fade, InputAdornment } from '@mui/material';
+import { CircularProgress, Fade, InputAdornment } from '@mui/material';
 import { useFormik } from 'formik';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -145,9 +145,8 @@ const SignUp = (): JSX.Element => {
               variant="contained"
               fullWidth
               type="submit"
-              disabled={loading}
             >
-              Cadastrar
+              {loading ? <CircularProgress color="inherit" /> : 'Cadastrar'}
             </S.ButtonStyled>
           </S.Form>
           <S.LinkStyled href="/">

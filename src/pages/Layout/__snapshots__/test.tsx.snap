@@ -39,7 +39,7 @@ exports[`<Layout /> should render the main 1`] = `
         />
         <button
           aria-haspopup="true"
-          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-9torc8-MuiButtonBase-root-MuiIconButton-root"
+          class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-137ul40-MuiButtonBase-root-MuiIconButton-root"
           tabindex="0"
           type="button"
         >
@@ -66,7 +66,7 @@ exports[`<Layout /> should render the main 1`] = `
     </div>
   </header>
   <div
-    class="MuiDrawer-root MuiDrawer-docked css-u5rkgc-MuiDrawer-docked"
+    class="MuiDrawer-root MuiDrawer-docked css-1ssu3rf-MuiDrawer-docked"
   >
     <div
       class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft css-12i7wg6-MuiPaper-root-MuiDrawer-paper"
@@ -222,7 +222,7 @@ exports[`<Layout /> should render the main 1`] = `
     </div>
   </div>
   <main
-    class="css-1brazwx"
+    class="css-cb53jd"
   >
     <div
       class="css-1k455el"
