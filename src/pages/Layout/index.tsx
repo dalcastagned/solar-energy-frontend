@@ -4,7 +4,6 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Logout from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
 import PieChartIcon from '@mui/icons-material/PieChart';
-import SettingsIcon from '@mui/icons-material/Settings';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
 import { Menu } from '@mui/material';
 import Box from '@mui/material/Box';
@@ -64,12 +63,6 @@ const Layout = ({ children, Title }: LayoutProps): JSX.Element => {
       path: '/plants',
       title: 'Unidade Consumidora',
       icon: ShowChartIcon,
-    },
-    {
-      id: '3',
-      path: '/generation',
-      title: 'Cadastro de Energia Gerada',
-      icon: SettingsIcon,
     },
   ];
 
@@ -140,7 +133,7 @@ const Layout = ({ children, Title }: LayoutProps): JSX.Element => {
             <S.ItemList key={item.id}>
               <ListItemButton
                 onClick={() => history.push(item.path)}
-                selected={history.location.pathname.search(item.path) !== -1}
+                selected={history.location.pathname === item.path}
               >
                 <ListItemIcon>
                   <item.icon />

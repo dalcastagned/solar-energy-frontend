@@ -1,7 +1,7 @@
 import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { LoginCredentials } from 'models/user';
-import { Link, MemoryRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Routes from 'routes';
 import api from 'services/api';
 import { renderWithRoute } from 'utils/tests/helpers';
@@ -48,68 +48,6 @@ describe('<Route />', () => {
     expect(screen.getByTestId('container')).toBeEmptyDOMElement();
 
     userEvent.click(screen.getByTestId('test-page-private-click-here'));
-    expect(screen.getByTestId('container')).toBeEmptyDOMElement();
-  });
-
-  it('Should be able to access the page if user has the required role', () => {
-    localStorage.setItem(
-      'user',
-
-      JSON.stringify({ ...userMock, roles: ['admin'] }),
-    );
-
-    const Component = (): JSX.Element => <h1>essa página é privada</h1>;
-
-    renderWithRoute(
-      <AuthProvider>
-        <div data-testid="container">
-          <Route
-            Component={Component}
-            isPrivate
-            roles={['admin']}
-            path="/page-private"
-          />
-        </div>
-
-        <Link to="/page-private" data-testid="test-page-private-click-here" />
-      </AuthProvider>,
-    );
-
-    expect(screen.getByTestId('container')).toBeEmptyDOMElement();
-
-    userEvent.click(screen.getByTestId('test-page-private-click-here'));
-
-    expect(screen.getByText('essa página é privada')).toBeInTheDocument();
-  });
-
-  it('Should not be able to access the page if user has the required role', () => {
-    localStorage.setItem(
-      'user',
-
-      JSON.stringify({ ...userMock, roles: ['admin'] }),
-    );
-
-    const Component = (): JSX.Element => <h1>essa página é privada</h1>;
-
-    renderWithRoute(
-      <AuthProvider>
-        <div data-testid="container">
-          <Route
-            Component={Component}
-            isPrivate
-            roles={['user']}
-            path="/page-private"
-          />
-        </div>
-
-        <Link to="/page-private" data-testid="test-page-private-click-here" />
-      </AuthProvider>,
-    );
-
-    expect(screen.getByTestId('container')).toBeEmptyDOMElement();
-
-    userEvent.click(screen.getByTestId('test-page-private-click-here'));
-
     expect(screen.getByTestId('container')).toBeEmptyDOMElement();
   });
 

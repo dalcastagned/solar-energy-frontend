@@ -94,12 +94,6 @@ export const ItemList = styled(ListItem)(() => ({
   '& .MuiListItemButton-root': {
     borderRadius: '0.8rem',
   },
-  '& .Mui-selected': {
-    background: '#4CBC9A !important',
-    color: '#fff',
-    ':hover': { background: '#4CBC9AEE' },
-    '& .MuiListItemIcon-root': { color: '#fff' },
-  },
 }));
 
 export const ContainerAppBar = styled('div')(() => ({

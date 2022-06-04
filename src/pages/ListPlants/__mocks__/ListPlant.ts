@@ -19,6 +19,15 @@ export const plantsMock = {
   ],
 };
 
+export const plantMock = {
+  id: 1,
+  nickname: 'Apelido da Planta',
+  place: 'Local da Planta',
+  brand: 'Marca da Planta',
+  model: 'Modelo da Planta',
+  active: true,
+};
+
 export const plantsWithPageMock = {
   hasNextPag: false,
   hasPreviousPage: false,

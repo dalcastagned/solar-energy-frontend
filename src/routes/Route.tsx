@@ -9,7 +9,6 @@ import {
 import { whereRedirect } from 'utils/tests/where-redirect';
 
 import { useAuth } from '../hooks/auth';
-import { checkRoles } from '../utils/check-roles';
 
 export type RouteProps = {
   isPrivate?: boolean;
@@ -20,16 +19,14 @@ export type RouteProps = {
 const Route = ({
   isPrivate = false,
   Component,
-  roles = [],
   ...props
 }: RouteProps): JSX.Element => {
   const { user } = useAuth();
 
   const render = (params: RouteComponentProps): React.ReactNode => {
     const isAuthenticated = isPrivate === !!user;
-    const userHasRequiredRole = user && checkRoles(roles);
 
-    if (!isAuthenticated || (user && !userHasRequiredRole)) {
+    if (!isAuthenticated) {
       return (
         <Redirect
           to={{

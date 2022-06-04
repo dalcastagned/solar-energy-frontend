@@ -19,7 +19,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import { useFormik } from 'formik';
 import { ReadPlants } from 'models/plants';
-import { useHistory } from 'react-router-dom';
+import AddPlantModal from 'pages/modals/AddPlant';
+import UpdatePlantModal from 'pages/modals/UpdatePlant';
 import { toast } from 'react-toastify';
 import api from 'services/api';
 import { handleErrorResponse } from 'utils/error-response';
@@ -52,11 +53,14 @@ const ListPlants = (): JSX.Element => {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('');
   const [loading, setLoading] = useState(false);
+  const [updatePlantId, setUpdatePlantId] = useState(0);
+  const [openAddPlantModal, setOpenAddPlantModal] = useState(false);
+  const [openUpdatePlantModal, setOpenUpdatePlantModal] = useState(false);
+  const [updateTable, setUpdateTable] = useState(false);
   const [alertProps, setAlertProps] = useState<ShowAlertProps>({
     severity: 'success',
     message: '',
   });
-  const history = useHistory();
 
   const formik = useFormik({
     initialValues: {
@@ -79,6 +83,7 @@ const ListPlants = (): JSX.Element => {
         message: 'Nenhuma unidade cadastrada',
       });
     setPlants(response.data);
+    setUpdateTable(false);
   }, [page, filter]);
 
   const removePlant = useCallback(
@@ -103,18 +108,17 @@ const ListPlants = (): JSX.Element => {
     [getPlants],
   );
 
-  const handleEdit = useCallback(
-    (id: number): void => {
-      history.push(`/plants/update`, { id });
-    },
-    [history],
-  );
+  const handleEdit = useCallback((id: number): void => {
+    setUpdatePlantId(id);
+    setOpenUpdatePlantModal(true);
+    // eslint-disable-next-line
+  }, []);
 
   useEffect(() => {
     getPlants().catch(e =>
       setAlertProps({ severity: 'error', message: handleErrorResponse(e) }),
     );
-  }, [getPlants, page, loading]);
+  }, [getPlants, page, loading, updateTable]);
 
   return (
     <>
@@ -193,7 +197,7 @@ const ListPlants = (): JSX.Element => {
                               plant.model.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled>
-                            {plant.active ? 'Ativo' : 'Inativo'}
+                            {plant.active ? 'Ativa' : 'Inativa'}
                           </S.TableCellBodyStyled>
                           <TableCell width={80}>
                             <S.ButtonEdit onClick={() => handleEdit(plant.id)}>
@@ -252,7 +256,7 @@ const ListPlants = (): JSX.Element => {
                       <S.BoxStyled>
                         <Typography variant="h4">Status:</Typography>
                         <Typography variant="h4">
-                          {plant.active ? 'Ativo' : 'Inativo'}
+                          {plant.active ? 'Ativa' : 'Inativa'}
                         </Typography>
                       </S.BoxStyled>
                     </CardContent>
@@ -279,11 +283,22 @@ const ListPlants = (): JSX.Element => {
               onChange={(_, value) => setPage(value)}
             />
           ) : null}
-          <S.ButtonNewPlant onClick={() => history.push(`/plants/add`)}>
+          <S.ButtonNewPlant onClick={() => setOpenAddPlantModal(true)}>
             Nova Unidade
           </S.ButtonNewPlant>
         </S.Wrapper>
       )}
+      <AddPlantModal
+        open={openAddPlantModal}
+        setOpen={setOpenAddPlantModal}
+        setUpdateTable={setUpdateTable}
+      />
+      <UpdatePlantModal
+        id={updatePlantId}
+        open={openUpdatePlantModal}
+        setOpen={setOpenUpdatePlantModal}
+        setUpdateTable={setUpdateTable}
+      />
     </>
   );
 };

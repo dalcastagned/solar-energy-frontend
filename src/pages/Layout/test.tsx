@@ -2,6 +2,7 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { AuthProvider } from 'hooks/auth';
 import { userMock } from 'hooks/auth/__mocks__';
+
 import Layout from '.';
 import { renderWithRoute } from '../../utils/tests/helpers';
 

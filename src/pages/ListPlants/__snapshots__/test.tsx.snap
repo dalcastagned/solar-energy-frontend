@@ -89,7 +89,7 @@ exports[`<ListPlants /> should render the main 1`] = `
       <div
         class="MuiAlert-message css-acap47-MuiAlert-message"
       >
-        Ocorreu um erro no servidor.
+        O servidor parece estar indisponível. Verifique sua conexão.
       </div>
     </div>
     <button

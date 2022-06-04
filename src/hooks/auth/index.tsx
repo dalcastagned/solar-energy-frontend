@@ -6,6 +6,8 @@ import {
   useState,
 } from 'react';
 
+import jwt_decode, { JwtPayload } from 'jwt-decode';
+
 import {
   LoginCredentials,
   UpdatePasswordCredentials,
@@ -47,11 +49,20 @@ const AuthProvider = ({ children }: AuthProviderParams): JSX.Element => {
     const token = parsedUser?.token;
 
     if (token && user) {
+      const tokenExpirationTime = jwt_decode<JwtPayload>(token).exp;
+
+      const date = new Date().getTime() / 1000;
+
+      if (tokenExpirationTime && tokenExpirationTime < date) {
+        cleanStorage();
+
+        return {} as AuthState;
+      }
+
       handleToken(token);
 
       return { user: parsedUser };
     }
-
     return {} as AuthState;
   });
 
