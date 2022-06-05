@@ -21,6 +21,7 @@ import { useFormik } from 'formik';
 import { ReadPlants } from 'models/plants';
 import AddPlantModal from 'pages/modals/AddPlant';
 import UpdatePlantModal from 'pages/modals/UpdatePlant';
+import { useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import api from 'services/api';
 import { handleErrorResponse } from 'utils/error-response';
@@ -61,6 +62,7 @@ const ListPlants = (): JSX.Element => {
     severity: 'success',
     message: '',
   });
+  const history = useHistory();
 
   const formik = useFormik({
     initialValues: {
@@ -108,11 +110,14 @@ const ListPlants = (): JSX.Element => {
     [getPlants],
   );
 
-  const handleEdit = useCallback((id: number): void => {
+  const handleEdit = (id: number): void => {
     setUpdatePlantId(id);
     setOpenUpdatePlantModal(true);
-    // eslint-disable-next-line
-  }, []);
+  };
+
+  const handleGoToGenerations = (id: number): void => {
+    history.push('/generations', { id });
+  };
 
   useEffect(() => {
     getPlants().catch(e =>
@@ -177,26 +182,39 @@ const ListPlants = (): JSX.Element => {
                     <TableBody>
                       {plants?.plants.map(plant => (
                         <S.TableRowStyled key={plant.id}>
-                          <S.TableCellBodyStyled width={50}>
+                          <S.TableCellBodyStyled
+                            width={50}
+                            onClick={() => handleGoToGenerations(plant.id)}
+                          >
                             {plant.id}
                           </S.TableCellBodyStyled>
-                          <S.TableCellBodyStyled>
+                          <S.TableCellBodyStyled
+                            onClick={() => handleGoToGenerations(plant.id)}
+                          >
                             {plant.nickname[0].toUpperCase() +
                               plant.nickname.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
-                          <S.TableCellBodyStyled>
+                          <S.TableCellBodyStyled
+                            onClick={() => handleGoToGenerations(plant.id)}
+                          >
                             {plant.place[0].toUpperCase() +
                               plant.place.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
-                          <S.TableCellBodyStyled>
+                          <S.TableCellBodyStyled
+                            onClick={() => handleGoToGenerations(plant.id)}
+                          >
                             {plant.brand[0].toUpperCase() +
                               plant.brand.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
-                          <S.TableCellBodyStyled>
+                          <S.TableCellBodyStyled
+                            onClick={() => handleGoToGenerations(plant.id)}
+                          >
                             {plant.model[0].toUpperCase() +
                               plant.model.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
-                          <S.TableCellBodyStyled>
+                          <S.TableCellBodyStyled
+                            onClick={() => handleGoToGenerations(plant.id)}
+                          >
                             {plant.active ? 'Ativa' : 'Inativa'}
                           </S.TableCellBodyStyled>
                           <TableCell width={80}>
@@ -220,7 +238,9 @@ const ListPlants = (): JSX.Element => {
               <S.ContainerCard>
                 {plants?.plants.map(plant => (
                   <S.CardStyled key={plant.id}>
-                    <CardContent>
+                    <CardContent
+                      onClick={() => handleGoToGenerations(plant.id)}
+                    >
                       <S.BoxStyled>
                         <Typography variant="h4">Id:</Typography>
                         <Typography variant="h4">{plant.id}</Typography>

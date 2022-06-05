@@ -1,5 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createMemoryHistory } from 'history';
+import { Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import api from 'services/api';
 
@@ -416,6 +418,153 @@ describe('<ListPlants />', () => {
           'O servidor parece estar indisponível. Verifique sua conexão.',
         ),
       ).toBeInTheDocument();
+    });
+  });
+  it('should go to generations page on click id button', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: plantsMock });
+    const history = createMemoryHistory();
+    const historyMock = jest.spyOn(history, 'push');
+
+    renderWithRoute(
+      <Router history={history}>
+        <ListPlants />
+      </Router>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('ID')).toBeInTheDocument();
+    });
+
+    userEvent.click(screen.getByRole('cell', { name: '1' }));
+
+    await waitFor(() => {
+      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+    });
+  });
+  it('should go to generations page on click nickname button', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: plantsMock });
+    const history = createMemoryHistory();
+    const historyMock = jest.spyOn(history, 'push');
+
+    renderWithRoute(
+      <Router history={history}>
+        <ListPlants />
+      </Router>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('ID')).toBeInTheDocument();
+    });
+
+    userEvent.click(screen.getByRole('cell', { name: 'Apelido da planta' }));
+
+    await waitFor(() => {
+      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+    });
+  });
+  it('should go to generations page on click place button', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: plantsMock });
+    const history = createMemoryHistory();
+    const historyMock = jest.spyOn(history, 'push');
+
+    renderWithRoute(
+      <Router history={history}>
+        <ListPlants />
+      </Router>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('ID')).toBeInTheDocument();
+    });
+
+    userEvent.click(screen.getByRole('cell', { name: 'Local da planta' }));
+
+    await waitFor(() => {
+      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+    });
+  });
+  it('should go to generations page on click brand button', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: plantsMock });
+    const history = createMemoryHistory();
+    const historyMock = jest.spyOn(history, 'push');
+
+    renderWithRoute(
+      <Router history={history}>
+        <ListPlants />
+      </Router>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('ID')).toBeInTheDocument();
+    });
+
+    userEvent.click(screen.getByRole('cell', { name: 'Marca da planta' }));
+
+    await waitFor(() => {
+      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+    });
+  });
+  it('should go to generations page on click model button', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: plantsMock });
+    const history = createMemoryHistory();
+    const historyMock = jest.spyOn(history, 'push');
+
+    renderWithRoute(
+      <Router history={history}>
+        <ListPlants />
+      </Router>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('ID')).toBeInTheDocument();
+    });
+
+    userEvent.click(screen.getByRole('cell', { name: 'Modelo da planta' }));
+
+    await waitFor(() => {
+      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+    });
+  });
+  it('should go to generations page on click active button', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: plantsMock });
+    const history = createMemoryHistory();
+    const historyMock = jest.spyOn(history, 'push');
+
+    renderWithRoute(
+      <Router history={history}>
+        <ListPlants />
+      </Router>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('ID')).toBeInTheDocument();
+    });
+
+    userEvent.click(screen.getByRole('cell', { name: 'Ativa' }));
+
+    await waitFor(() => {
+      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+    });
+  });
+  it('should go to generations page on click card', async () => {
+    jest.spyOn(api, 'get').mockResolvedValue({ data: plantsMock });
+    const history = createMemoryHistory();
+    const historyMock = jest.spyOn(history, 'push');
+
+    renderWithRoute(
+      <Router history={history}>
+        <ListPlants />
+      </Router>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('ID')).toBeInTheDocument();
+    });
+
+    userEvent.click(screen.getByRole('heading', { name: 'Id:' }));
+
+    await waitFor(() => {
+      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
     });
   });
 });

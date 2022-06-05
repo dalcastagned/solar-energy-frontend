@@ -32,10 +32,12 @@ export const TableCellTopStyled = styled(TableCell)(() => ({
 export const TableRowStyled = styled(TableRow)(() => ({
   '&:last-child td, &:last-child th': { border: 0 },
   backgroundColor: '#fafafa',
+  '&:hover': { backgroundColor: '#eaeaea' },
 }));
 
 export const TableCellBodyStyled = styled(TableCell)(() => ({
   fontSize: '1.3rem',
+  cursor: 'pointer',
 }));
 
 export const ButtonEdit = styled(Button)(() => ({

@@ -10,10 +10,10 @@ export const plantsMock = {
   plants: [
     {
       id: 1,
-      nickname: 'nickname',
-      place: 'place',
-      brand: 'brand',
-      model: 'model',
+      nickname: 'Apelido da Planta',
+      place: 'Local da Planta',
+      brand: 'Marca da Planta',
+      model: 'Modelo da Planta',
       active: true,
     },
   ],
