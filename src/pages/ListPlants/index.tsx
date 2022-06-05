@@ -75,6 +75,10 @@ const ListPlants = (): JSX.Element => {
   });
 
   const getPlants = useCallback(async () => {
+    setAlertProps({
+      severity: 'info',
+      message: '',
+    });
     const response = await api.get<ReadPlants>(
       `/plant?page=${page}&limit=8&filter=${filter}`,
     );
@@ -115,8 +119,12 @@ const ListPlants = (): JSX.Element => {
     setOpenUpdatePlantModal(true);
   };
 
-  const handleGoToGenerations = (id: number): void => {
-    history.push('/generations', { id });
+  const handleGoToGenerations = (
+    id: number,
+    plantName: string,
+    active: boolean,
+  ): void => {
+    history.push('/generations', { id, plantName, active });
   };
 
   useEffect(() => {
@@ -184,36 +192,72 @@ const ListPlants = (): JSX.Element => {
                         <S.TableRowStyled key={plant.id}>
                           <S.TableCellBodyStyled
                             width={50}
-                            onClick={() => handleGoToGenerations(plant.id)}
+                            onClick={() =>
+                              handleGoToGenerations(
+                                plant.id,
+                                plant.nickname,
+                                plant.active,
+                              )
+                            }
                           >
                             {plant.id}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled
-                            onClick={() => handleGoToGenerations(plant.id)}
+                            onClick={() =>
+                              handleGoToGenerations(
+                                plant.id,
+                                plant.nickname,
+                                plant.active,
+                              )
+                            }
                           >
                             {plant.nickname[0].toUpperCase() +
                               plant.nickname.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled
-                            onClick={() => handleGoToGenerations(plant.id)}
+                            onClick={() =>
+                              handleGoToGenerations(
+                                plant.id,
+                                plant.nickname,
+                                plant.active,
+                              )
+                            }
                           >
                             {plant.place[0].toUpperCase() +
                               plant.place.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled
-                            onClick={() => handleGoToGenerations(plant.id)}
+                            onClick={() =>
+                              handleGoToGenerations(
+                                plant.id,
+                                plant.nickname,
+                                plant.active,
+                              )
+                            }
                           >
                             {plant.brand[0].toUpperCase() +
                               plant.brand.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled
-                            onClick={() => handleGoToGenerations(plant.id)}
+                            onClick={() =>
+                              handleGoToGenerations(
+                                plant.id,
+                                plant.nickname,
+                                plant.active,
+                              )
+                            }
                           >
                             {plant.model[0].toUpperCase() +
                               plant.model.slice(1).toLowerCase()}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled
-                            onClick={() => handleGoToGenerations(plant.id)}
+                            onClick={() =>
+                              handleGoToGenerations(
+                                plant.id,
+                                plant.nickname,
+                                plant.active,
+                              )
+                            }
                           >
                             {plant.active ? 'Ativa' : 'Inativa'}
                           </S.TableCellBodyStyled>
@@ -239,7 +283,13 @@ const ListPlants = (): JSX.Element => {
                 {plants?.plants.map(plant => (
                   <S.CardStyled key={plant.id}>
                     <CardContent
-                      onClick={() => handleGoToGenerations(plant.id)}
+                      onClick={() =>
+                        handleGoToGenerations(
+                          plant.id,
+                          plant.nickname,
+                          plant.active,
+                        )
+                      }
                     >
                       <S.BoxStyled>
                         <Typography variant="h4">Id:</Typography>

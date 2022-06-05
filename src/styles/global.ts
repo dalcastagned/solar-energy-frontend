@@ -33,6 +33,8 @@ const GlobalStyles = createGlobalStyle`
   .Toastify__toast-body {
     font-size: 1.6rem;
   }
+
+  .MuiCalendarPicker-root div, .MuiCalendarPicker-root span, .MuiCalendarPicker-root button { font-size: 1.6rem; }
 `;
 
 export default GlobalStyles;

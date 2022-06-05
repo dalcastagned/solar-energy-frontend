@@ -438,7 +438,11 @@ describe('<ListPlants />', () => {
     userEvent.click(screen.getByRole('cell', { name: '1' }));
 
     await waitFor(() => {
-      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+      expect(historyMock).toBeCalledWith('/generations', {
+        active: true,
+        id: 1,
+        plantName: 'Apelido da Planta',
+      });
     });
   });
   it('should go to generations page on click nickname button', async () => {
@@ -459,7 +463,11 @@ describe('<ListPlants />', () => {
     userEvent.click(screen.getByRole('cell', { name: 'Apelido da planta' }));
 
     await waitFor(() => {
-      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+      expect(historyMock).toBeCalledWith('/generations', {
+        active: true,
+        id: 1,
+        plantName: 'Apelido da Planta',
+      });
     });
   });
   it('should go to generations page on click place button', async () => {
@@ -480,7 +488,11 @@ describe('<ListPlants />', () => {
     userEvent.click(screen.getByRole('cell', { name: 'Local da planta' }));
 
     await waitFor(() => {
-      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+      expect(historyMock).toBeCalledWith('/generations', {
+        active: true,
+        id: 1,
+        plantName: 'Apelido da Planta',
+      });
     });
   });
   it('should go to generations page on click brand button', async () => {
@@ -501,7 +513,11 @@ describe('<ListPlants />', () => {
     userEvent.click(screen.getByRole('cell', { name: 'Marca da planta' }));
 
     await waitFor(() => {
-      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+      expect(historyMock).toBeCalledWith('/generations', {
+        active: true,
+        id: 1,
+        plantName: 'Apelido da Planta',
+      });
     });
   });
   it('should go to generations page on click model button', async () => {
@@ -522,7 +538,11 @@ describe('<ListPlants />', () => {
     userEvent.click(screen.getByRole('cell', { name: 'Modelo da planta' }));
 
     await waitFor(() => {
-      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+      expect(historyMock).toBeCalledWith('/generations', {
+        active: true,
+        id: 1,
+        plantName: 'Apelido da Planta',
+      });
     });
   });
   it('should go to generations page on click active button', async () => {
@@ -543,7 +563,11 @@ describe('<ListPlants />', () => {
     userEvent.click(screen.getByRole('cell', { name: 'Ativa' }));
 
     await waitFor(() => {
-      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+      expect(historyMock).toBeCalledWith('/generations', {
+        active: true,
+        id: 1,
+        plantName: 'Apelido da Planta',
+      });
     });
   });
   it('should go to generations page on click card', async () => {
@@ -564,7 +588,11 @@ describe('<ListPlants />', () => {
     userEvent.click(screen.getByRole('heading', { name: 'Id:' }));
 
     await waitFor(() => {
-      expect(historyMock).toBeCalledWith('/generations', { id: 1 });
+      expect(historyMock).toBeCalledWith('/generations', {
+        active: true,
+        id: 1,
+        plantName: 'Apelido da Planta',
+      });
     });
   });
 });
