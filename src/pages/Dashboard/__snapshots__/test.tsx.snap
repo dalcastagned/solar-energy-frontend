@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dashboard /> should render the main 1`] = `
+<div
+  class="MuiBox-root css-p4ro6g"
+>
+  <div
+    class="MuiBox-root css-1oy7jxl"
+  >
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation2 css-1mhtkfx-MuiPaper-root"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 css-1sra7t5-MuiTypography-root"
+      >
+        Total de Unidades
+      </h2>
+      <p>
+        0
+      </p>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation2 css-1mhtkfx-MuiPaper-root"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 css-1sra7t5-MuiTypography-root"
+      >
+        Unidades Ativas
+      </h2>
+      <p>
+        0
+      </p>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation2 css-1mhtkfx-MuiPaper-root"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 css-1sra7t5-MuiTypography-root"
+      >
+        Unidades Inativas
+      </h2>
+      <p>
+        0
+      </p>
+    </div>
+    <div
+      class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation2 css-1mhtkfx-MuiPaper-root"
+    >
+      <h2
+        class="MuiTypography-root MuiTypography-h2 css-1sra7t5-MuiTypography-root"
+      >
+        Média de Energia
+      </h2>
+      <p>
+        12.50
+        <span>
+          kW
+        </span>
+      </p>
+    </div>
+  </div>
+  <div
+    class="MuiBox-root css-14wktby"
+  >
+    <h1
+      class="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
+    >
+      Total de energia gerada por mês
+    </h1>
+    <canvas
+      height="150"
+      role="img"
+      width="300"
+    />
+  </div>
+</div>
+`;

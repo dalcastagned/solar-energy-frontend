@@ -15,3 +15,8 @@ export type Generation = {
   date: string;
   generatePower: number;
 };
+
+export type GenerationPower = {
+  month: string;
+  generation: number;
+};

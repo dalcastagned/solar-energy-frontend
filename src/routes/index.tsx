@@ -1,3 +1,4 @@
+import Dashboard from 'pages/Dashboard';
 import ListGenerations from 'pages/ListGenerations';
 import { Switch, useLocation } from 'react-router-dom';
 
@@ -15,15 +16,20 @@ const Routes = (): JSX.Element => {
   return (
     <Switch>
       <Route Component={Login} path="/" exact />
-
       <Route Component={ResetPassword} path="/reset-password" exact />
-
       <Route Component={SignUp} path="/signup" exact />
-
       <LayoutRoute
         Component={ListPlants}
         path="/plants"
         Title="Lista de Unidades"
+        exact
+        isPrivate
+      />
+
+      <LayoutRoute
+        Component={Dashboard}
+        path="/dashboard"
+        Title="Dashboard"
         exact
         isPrivate
       />
@@ -39,7 +45,6 @@ const Routes = (): JSX.Element => {
         exact
         isPrivate
       />
-
       <LayoutRoute
         Component={NotFound}
         Title="Página não encontrada"

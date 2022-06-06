@@ -1,13 +1,13 @@
 export type ReadPlants = {
-    hasNextPag: boolean;
-    hasPreviousPage: boolean;
-    isFirstPage: boolean;
-    isLastPage: boolean;
-    pageCount: number;
-    pageNumber: number;
-    pageSize: number;
-    totalItemCount: number;
-    plants: Plant[];
+  hasNextPag: boolean;
+  hasPreviousPage: boolean;
+  isFirstPage: boolean;
+  isLastPage: boolean;
+  pageCount: number;
+  pageNumber: number;
+  pageSize: number;
+  totalItemCount: number;
+  plants: Plant[];
 };
 
 export type Plant = {
@@ -17,4 +17,9 @@ export type Plant = {
   brand: string;
   model: string;
   active: boolean;
+};
+
+export type PlantCounts = {
+  activePlants: number;
+  inactivePlants: number;
 };
