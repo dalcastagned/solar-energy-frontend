@@ -9,10 +9,16 @@ export const Wrapper = styled('div')(() => ({
 }));
 
 export const ContainerImage = styled('div')(() => ({
-  width: '50%',
-  height: '100%',
-  background: "url('/img/login.png') center no-repeat",
-  backgroundSize: 'cover',
+  flex: '1',
+  background:
+    'linear-gradient(150deg, rgba(246,171,61,1) 0%, rgba(117,173,78,1) 80%)',
+  justifyContent: 'center',
+  alignItems: 'center',
+  display: 'flex',
+
+  '& img': {
+    width: '50%',
+  },
 
   '@media screen and (max-width: 980px)': {
     display: 'none',
@@ -29,7 +35,7 @@ export const ContainerResetPassword = styled('div')(() => ({
   '@media screen and (max-width: 980px)': {
     width: '100%',
     background:
-      "linear-gradient(135deg, rgba(255, 255, 255, 0.9) -10%, rgba(255, 255, 255, 0.9) 180%), url('/img/login.png')",
+      "linear-gradient(135deg, rgba(255, 255, 255, 0.9) -10%, rgba(255, 255, 255, 0.9) 180%), url('/img/solar-panel.svg')",
     backgroundSize: 'cover',
   },
 }));

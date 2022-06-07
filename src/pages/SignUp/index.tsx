@@ -69,7 +69,9 @@ const SignUp = (): JSX.Element => {
 
   return (
     <S.Wrapper>
-      <S.ContainerImage />
+      <S.ContainerImage>
+        <img src="/img/solar-panel.svg" alt="Solar Panel" />
+      </S.ContainerImage>
       <Fade in timeout={1000}>
         <S.ContainerSignUp>
           <S.ContainerInfo>
@@ -149,7 +151,7 @@ const SignUp = (): JSX.Element => {
               {loading ? <CircularProgress color="inherit" /> : 'Cadastrar'}
             </S.ButtonStyled>
           </S.Form>
-          <S.LinkStyled href="/">
+          <S.LinkStyled onClick={() => history.push('/')}>
             Já possui uma conta? Faça o login!
           </S.LinkStyled>
         </S.ContainerSignUp>

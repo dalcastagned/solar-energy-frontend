@@ -5,10 +5,15 @@ exports[`<Login /> should render the main 1`] = `
   class="css-f9gpob"
 >
   <div
-    class="css-jtmvlx"
-  />
+    class="css-11up960"
+  >
+    <img
+      alt="Solar Panel"
+      src="/img/solar-panel.svg"
+    />
+  </div>
   <div
-    class="css-78rvji"
+    class="css-29eqjv"
     style="opacity: 1; webkit-transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
   >
     <div
@@ -151,8 +156,7 @@ exports[`<Login /> should render the main 1`] = `
       </button>
     </form>
     <a
-      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1qk869o-MuiTypography-root-MuiLink-root"
-      href="/signup"
+      class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-12ay9ku-MuiTypography-root-MuiLink-root"
     >
       Ainda não possui uma conta? Cadastre-se!
     </a>

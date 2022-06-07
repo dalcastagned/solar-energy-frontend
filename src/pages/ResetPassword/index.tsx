@@ -76,7 +76,9 @@ const ResetPassword = (): JSX.Element => {
 
   return (
     <S.Wrapper>
-      <S.ContainerImage />
+      <S.ContainerImage>
+        <img src="/img/solar-panel.svg" alt="Solar Panel" />
+      </S.ContainerImage>
       <Fade in timeout={1000}>
         <S.ContainerResetPassword>
           <S.ContainerInfo>
