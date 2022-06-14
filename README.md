@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+<h1 align="center">Bem-Vindo(a) ao projeto DevInHouse Solar Energy 👋</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+    <img src='https://github.com/dalcastagned/solar-energy-frontend/blob/main/preview.gif'>
+</p>
 
-## Available Scripts
+## Descrição do Projeto
 
-In the project directory, you can run:
+<p align="left">Refatoração do projeto devinhouse solar energy que pode ser encontrado no link: <a href="https://github.com/dalcastagned/solar-energy-json-server">https://github.com/dalcastagned/solar-energy-json-server</a>
+</p>
 
-### `npm start`
+## Requisitos para Rodar o Projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="left">Utilizar a API do link: <a href="https://github.com/dalcastagned/solar-energy-backend">https://github.com/dalcastagned/solar-energy-backend</a> </p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instalação
 
-### `npm test`
+```sh
+yarn install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Inicialização
 
-### `npm run build`
+```sh
+yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Uso
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+Abra http://localhost:3000 para visualizar no seu browser
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 Tecnologias
 
-### `npm run eject`
+As seguintes ferramentas foram usadas na construção do projeto:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [React](https://pt-br.reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [MUI](https://mui.com/pt/)
+- [Styled-Components](https://styled-components.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Chart.js](https://www.chartjs.org/)
+- [React-Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [Yup](https://github.com/jquense/yup)
+- [Formik](https://formik.org/)
+- [Moment](https://momentjs.com/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Commitizen](https://github.com/commitizen/cz-cli)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Autor
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<a href="https://github.com/dalcastagned">
+ <img src="https://avatars.githubusercontent.com/u/65626347?v=4" width="100px;"/>
+ <br />
+ <sub><b>Daniel Dalcastagne</b></sub></a> <a href="https://github.com/dalcastagned">🚀</a>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Feito com ❤️ por Daniel Dalcastagne 👋🏽 Entre em contato!
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[![Linkedin Badge](https://img.shields.io/badge/-LINKEDIN-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/daniel-dalcastagne-4baa00179/)](https://www.linkedin.com/in/daniel-dalcastagne-4baa00179/)
+[![Gmail Badge](https://img.shields.io/badge/-EMAIL-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:contato@danieldalcastagne.com)](mailto:contato@danieldalcastagne.com)
