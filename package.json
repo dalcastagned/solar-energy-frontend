@@ -87,7 +87,8 @@
     "lint-staged": "lint-staged",
     "commit": "git-cz",
     "commit:all": "git add . && git-cz",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "dev": "docker-compose -f docker-compose.dev.yml up"
   },
   "eslintConfig": {
     "extends": [

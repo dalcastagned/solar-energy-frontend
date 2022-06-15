@@ -25,6 +25,12 @@ yarn install
 yarn start
 ```
 
+## Instalação e inicialização com docker
+
+```sh
+yarn dev
+```
+
 ## Uso
 
 ```sh
