@@ -35,7 +35,7 @@ const responseErrorHandler = (error: AxiosError): Promise<AxiosError> => {
   return Promise.reject(error);
 };
 
-const api = axios.create({ baseURL: 'https://localhost:7140/api' });
+const api = axios.create({ baseURL: 'http://localhost:7140/api' });
 
 api.interceptors.response.use(
   response => responseSuccessHandler(response),
