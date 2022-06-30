@@ -200,7 +200,9 @@ const ListPlants = (): JSX.Element => {
                               )
                             }
                           >
-                            {plant.id}
+                            {plant.id.toString().length > 5
+                              ? `${plant.id.toString().substring(0, 5)}...`
+                              : plant.id.toString()}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled
                             onClick={() =>

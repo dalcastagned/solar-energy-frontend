@@ -11,7 +11,9 @@
 
 ## Requisitos para Rodar o Projeto
 
-<p align="left">Utilizar a API do link: <a href="https://github.com/dalcastagned/solar-energy-backend">https://github.com/dalcastagned/solar-energy-backend</a> </p>
+<p align="left">Utilizar a API em .NET do link: <a href="https://github.com/dalcastagned/solar-energy-backend">https://github.com/dalcastagned/solar-energy-backend</a> </p>
+<p align="left">ou</a> </p>
+<p align="left">Utilizar a API em NodeJS do link: <a href="https://github.com/dalcastagned/solar-energy-backend-node">https://github.com/dalcastagned/solar-energy-backend-node</a> </p>
 
 ## Instalação
 

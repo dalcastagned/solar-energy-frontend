@@ -214,7 +214,9 @@ const ListGenerations = (): JSX.Element => {
                       {generations?.generations.map(generation => (
                         <S.TableRowStyled key={generation.id}>
                           <S.TableCellBodyStyled width={50}>
-                            {generation.id}
+                            {generation.id.toString().length > 5
+                              ? `${generation.id.toString().substring(0, 5)}...`
+                              : generation.id.toString()}
                           </S.TableCellBodyStyled>
                           <S.TableCellBodyStyled>
                             {moment(generation.date).format(
